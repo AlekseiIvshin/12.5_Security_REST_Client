@@ -11,6 +11,7 @@ dependencies{
 	compile 'org.rendersnake:rendersnake:1.8'
 	compile 'org.codehaus.jackson:jackson-jaxrs:1.9.13'
 	compile 'org.mockito:mockito-all:1.9.5'
+	compile 'org.apache.httpcomponents:httpclient:4.3.5'	
 	
 }
 
