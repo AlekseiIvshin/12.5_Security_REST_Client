@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+	mavenCentral()
+}
+dependencies{
+	compile 'ch.qos.logback:logback-classic:1.1.2'
+	compile 'javax:javaee-api:7.0'
+	testCompile 'junit:junit:4.11+'
+	compile 'org.rendersnake:rendersnake:1.8'
+	compile 'org.codehaus.jackson:jackson-jaxrs:1.9.13'
+	compile 'org.mockito:mockito-all:1.9.5'
+	
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'client.Client'
+		def manifestCp  = configurations.runtime.files.collect {
+			File file = it
+			"lib/${file.name}"
+		}.join(' ')
+	}
+}
